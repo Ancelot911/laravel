@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class CategoryFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant
      *
      * @var string
      */
     protected $model = Category::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
     {
         return [
             //
-            'name' => $this->faker->word ,
+            'name' => $this->faker->word , // Nom de la categorie
             'created_at' => now(),
             'updated_at' => now(),
 

@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TaskFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant
      *
      * @var string
      */
     protected $model = Task::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
@@ -26,12 +26,12 @@ class TaskFactory extends Factory
         $date = $dt->format("Y-m-d"); // 1994-09-24
         return [
             //'user_id' => User::factory(),
-            'board_id' => Board::factory(),
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
-            'due_date' => $date,
-            'state' => $this->faker->randomElement(['todo' ,'ongoing', 'done']),
-            'category_id' => Category::factory(), 
+            'board_id' => Board::factory(), // ID de la board
+            'title' => $this->faker->sentence, // Nom de la tâche
+            'description' => $this->faker->paragraph, // Description de la tâche
+            'due_date' => $date, //Date de fin de la tâche
+            'state' => $this->faker->randomElement(['todo' ,'ongoing', 'done']), // Statut de la tâche
+            'category_id' => Category::factory(), // ID de la catégorie
             'created_at' => now(),
             'updated_at' => now(),
 

@@ -8,22 +8,22 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TaskUserFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant
      *
      * @var string
      */
     protected $model = TaskUser::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            'task_id' => Task::factory(), 
+            'user_id' => User::factory(), // ID de l'utilisateur
+            'task_id' => Task::factory(), // ID de la tâche
             //'assigned' => $this->faker->boolean,
             'created_at' => now(),
             'updated_at' => now(),

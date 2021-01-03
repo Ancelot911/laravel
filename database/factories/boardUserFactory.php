@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class BoardUserFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant
      *
      * @var string
      */
     protected $model = BoardUser::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
@@ -23,8 +23,8 @@ class BoardUserFactory extends Factory
     {
         return [
             //
-            'user_id' => User::factory(),
-            'board_id' => Board::factory(), 
+            'user_id' => User::factory(),// ID de l'utilisateur
+            'board_id' => Board::factory(), // ID de la board
             'created_at' => now(),
             'updated_at' => now(),
 

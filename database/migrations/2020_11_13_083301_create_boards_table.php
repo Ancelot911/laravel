@@ -15,11 +15,11 @@ class CreateBoardsTable extends Migration
     {
         Schema::create('boards', function (Blueprint $table) {
             $table->id();
-            $table->string("title"); 
-            $table->text("description")->nullable();
+            $table->string("title"); // Nom de la board
+            $table->text("description")->nullable(); // Description de la board
             // $table->unsignedBigInteger("user_id"); 
             // $table->foreign('user_id')->references("id")->on(("user"))->setNullOnDelete();
-            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null");
+            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null"); // ID de l'utilisateur
             // $table->foreignId("user_id")->nullable()->constrained()->setNullOnDelete();
             $table->timestamps();
         });

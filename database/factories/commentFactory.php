@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class CommentFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant
      *
      * @var string
      */
     protected $model = Comment::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            'task_id' => Task::factory(), 
-            'text' => $this->faker->text,
+            'user_id' => User::factory(), // ID de l'utilisateur
+            'task_id' => Task::factory(), // ID de la tâche
+            'text' => $this->faker->text, // Contenu du commentaire
             'created_at' => now(),
             'updated_at' => now(),
 

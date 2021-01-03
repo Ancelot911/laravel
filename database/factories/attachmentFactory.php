@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class AttachmentFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * Le nom du modèle d'usine correspondant.
      *
      * @var string
      */
     protected $model = Attachment::class;
 
     /**
-     * Define the model's default state.
+     * Défini l'état par défaut du modèle.
      *
      * @return array
      */
@@ -23,14 +23,14 @@ class AttachmentFactory extends Factory
     {
         {
             return [
-                'user_id' => User::factory(),
-                'task_id' => Task::factory(), 
-                'file' => base64_encode($this->faker->text),
-                'filename' => "toto.txt", 
-                'type' => $this->faker->mimeType(),
-                'size' => 256,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'user_id' => User::factory(),// ID de l'utilisateur
+                'task_id' => Task::factory(),// ID de la tâche
+                'file' => base64_encode($this->faker->text), // Chemin du fichier
+                'filename' => "toto.txt", // Nom du fichier
+                'type' => $this->faker->mimeType(), // Type du fichier
+                'size' => 256, // Taille du fichier
+                'created_at' => now(), // Date de création
+                'updated_at' => now(), // Date de la dernière mise à jour
     
             ];
         }

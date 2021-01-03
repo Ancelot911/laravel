@@ -15,12 +15,12 @@ class CreateAttachmentsTable extends Migration
     {
         Schema::create('attachments', function (Blueprint $table) {
             $table->id();
-            $table->binary("file");
-            $table->string("filename");
-            $table->integer("size"); 
-            $table->string("type");
-            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null"); 
-            $table->foreignId("task_id")->constrained()->onDelete("cascade"); 
+            $table->binary("file"); // Chemin du fichier
+            $table->string("filename"); // Nom du fichier
+            $table->integer("size"); // Taille du fichier
+            $table->string("type"); // Type du fichier
+            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null"); // ID de l'utilisateur
+            $table->foreignId("task_id")->constrained()->onDelete("cascade"); // ID de la tâche
             $table->timestamps();
         });
     }

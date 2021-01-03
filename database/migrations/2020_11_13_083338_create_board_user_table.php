@@ -15,9 +15,9 @@ class CreateBoardUserTable extends Migration
     {
         Schema::create('board_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("board_id")->constrained()->cascadeOnDelete();
-            $table->foreignId("user_id")->constrained()->cascadeOnDelete();
-            $table->unique(["board_id", "user_id"]);
+            $table->foreignId("board_id")->constrained()->cascadeOnDelete(); //ID de la board
+            $table->foreignId("user_id")->constrained()->cascadeOnDelete(); //ID de l'utilisateur
+            $table->unique(["board_id", "user_id"]); // Liste de tous les utilisteurs apparteneant au même board
             $table->timestamps();
         });
     }
